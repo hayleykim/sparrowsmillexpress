@@ -21,6 +21,6 @@ class Menu(models.Model):
     note = models.CharField(max_length=256)
 
     def __str__(self):
-        return self.name
+        return self.title
 
 
