@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="mb-1" style="position: relative;">
+    <img src="../static/image/main.jpg" class="d-block w-100" alt="homepage food image" style="width: 100%; height: auto;">
+    <div class="home-main-image-text-div">
+        <div class="home-main-text">Authentic Korean Food & KFC</div>
+        <p>Enjoy your favourite Korean cuisine and Crispy <em>Korean Fried Chicken</em> in Haymarket, Sydney</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mb-1">
+        <div class="home-img-div col-7">
+            <img src="../static/image/homepageimg1.jpg" class="d-block img-fluid" alt="homepage food image">
+        </div>
+            
+        <div class="home-text-div col-5">
+            <div class="home-main-text custom-home-main-title">WELCOME</div>
+            <div class="home-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit amet consectetur. Pariatur ab officiis ipsam ducimus minus itaque dolorum culpa alias, consequatur temporibus, quasi voluptatum quisquam dolor mollitia voluptatibus adipisci impedit aliquid in.</div>
+            <button type="button" class="btn"><a class="nav-link" href="/menu">Explore Our Menu</a></button>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="home-text-div col-5">
+            <div class="home-main-text custom-home-main-title">Order Online</div>
+            <div class="home-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur ab officiis ipsam ducimus minus itaque dolorum culpa alias, consequatur temporibus, quasi voluptatum quisquam dolor mollitia voluptatibus adipisci impedit aliquid in.</div>
+        </div>
+
+        <div class="home-img-div col-7">
+            <img src="../static/image/homepageimg2.jpg" class="d-block img-fluid" alt="homepage food image">
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; ">
+        <div class="home-main-text">Location</div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13249.770909371184!2d151.204388!3d-33.87825!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae2355bdeebd%3A0x5064f639c5db6a90!2sSparrow&#39;s%20Mill%20Express%20(Sussex%20St.)!5e0!3m2!1sen!2sau!4v1713176772850!5m2!1sen!2sau" width="100%" height="300" style="border:0; filter: grayscale(80%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+</div>
+
+{% endblock %}
