@@ -1,0 +1,22 @@
+databases:
+  - name: sparrowsmillexpressdb
+    plan: free
+    databaseName: sparrowsmillexpress
+    user: sparrowsmillexpress
+
+services:
+  - type: web
+    plan: free
+    name: sparrowsmillexpress
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "python3 -m gunicorn sparrowsmillexpress.asgi:application -k uvicorn.workers.UvicornWorker"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: sparrowsmillexpressdb
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
