@@ -78,7 +78,24 @@ class MenuCreate(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        return super().form_valid(form)
+        response = super().form_valid(form)
+
+        menu_id = self.object.id
+        photo_file = self.request.FILES.get('photo-file', None)
+
+        if photo_file:
+            s3 = boto3.client('s3')
+            key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+            try:
+                bucket = os.environ['S3_BUCKET']
+                s3.upload_fileobj(photo_file, bucket, key)
+                url = f"{os.environ['S3_BASE_URL']}{bucket}/{key}"
+                Photo.objects.create(url=url, menu_id=menu_id)
+            except Exception as e:
+                print('An error occurred uploading file to S3')
+                print(e)
+        
+        return response
 
 
 class MenuUpdate(UpdateView):
@@ -140,7 +157,7 @@ def signup(request):
       user = form.save()
       # This is how we log a user in via code
       login(request, user)
-      return redirect('index')
+      return redirect('/')
     else:
       error_message = 'Invalid sign up - try again'
   # A bad POST or a GET request, so render signup.html with an empty form

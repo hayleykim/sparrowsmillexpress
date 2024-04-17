@@ -11,7 +11,7 @@
     <h1>Add Menu</h1>
     {% endif %}
 
-  <form action="" method="POST" class="mt-4">
+  <form action="" method="POST" class="mt-4" enctype="multipart/form-data">
     
     {% csrf_token %}
     <div class="row">
@@ -23,9 +23,22 @@
 
         {% if object %}
             <input type="submit" value="Update Menu" class="btn button-custom">
-        {% else %}
-            <input type="submit" value="Create Menu" class="btn button-custom">
+            
         {% endif %}
+
+        {% if not menu.id %}
+          {% for photo in photos %}
+            <div class="responsive-img col-md-6"><img class="img-fluid rounded mb-3" src="{{ photo.url }}" alt="Uploaded Photo"></div>
+          {% empty %}
+            <div class="card-panel teal-text center-align mt-4">No Photos Uploaded</div>
+          {% endfor %}
+          
+          <input type="file" name="photo-file">
+          
+          <input type="submit" value="Create Menu" class="btn button-custom">
+          
+        {% endif %}
+
       </div>
   </form>
 
@@ -46,6 +59,8 @@
                 </div>
                 <button type="submit" class="btn button-custom">Upload Photo</button>
             </form>
+
+
           {% endif %}
         </div> 
     </div>
