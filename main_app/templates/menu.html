@@ -14,10 +14,24 @@
       {% for m in menus %}
         <div class="col-md-3">
           <div class="card">
-            <div class="card-content">
-              <span class="card-title">{{ m.title }}</span>
-              <p>Description: {{ m.description }}</p>
-              <p>Note: {{ m.note }}</p>
+            
+            <div class="menu-content">
+
+              {% for photo in m.photos.all %}
+                <img class="responsive-img" src="{{ photo.url }}">
+                {% empty %}
+                    <div class="card-panel teal-text center-align"></div>
+                {% endfor %}
+
+              <div class="menu-title">{{ m.title }}</div>
+              <p class="menu-text">{{ m.description }}</p>
+            </div>
+
+            <div class="row mb-2">
+                {% if request.user.is_superuser %}
+                    <div class="col"><button class="btn button-custom menu-custom-btn"><a class="nav-link" href="{% url 'menu_update' m.id %}">Edit</a></button></div>
+                    <div class="col"><button class="btn button-custom menu-custom-btn"><a class="nav-link" href="{% url 'menu_delete' m.id %}">Delete</a></button></div>
+                {% endif %}
             </div>
           </div>
         </div>

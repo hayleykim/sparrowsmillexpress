@@ -10,28 +10,62 @@ body {
   }
   
   footer.page-footer {
-    padding-top: 0;
+    padding: 5px 0;
+    letter-spacing: 0.1rem;
+    font-weight: 200;
     text-align: center;
+    /* background:linear-gradient(to bottom, transparent, rgba(142, 64, 85, 0.5), rgba(142, 64, 85, 0.7), #8d3d53); */
+    background: linear-gradient(to bottom, rgba(255,0,0,0), rgba(255, 175, 126, 0.979));
   }
 
   .navbar {
     letter-spacing: 0.1rem;
     font-weight: 200;
+    
   }
 
-  .custom-navbar {
-    max-width: 1140px;
-    margin: 0 auto;
+  .nav-col {
+    margin: 5px 25px;
   }
 
-  .navbar a:hover {
-    color: orange;
+  .navbar-nav .nav-item .nav-link {
+    white-space: nowrap;
+}
+
+.scrolled {
+    background: linear-gradient(to top, rgba(255,0,0,0), rgb(255, 175, 126));
+    
+}
+
+.linkColor {
+  color: #fff;
+}
+
+
+  .custom-navbar,
+  .home-text-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+  }
+
+  .navbar a:hover,
+  button.btn-link:hover {
+    color: rgb(255, 180, 42);
+    font-weight: 300;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
   }
 
   @media (max-width: 991.98px) {
     #navbarNav {
       text-align: right;
     }
+  }
+
+  .logo-image {
+    width: 300px;
   }
 
   .home-main-image-text-div {
@@ -84,16 +118,8 @@ body {
     overflow: hidden;
   }
 
-  .home-text-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    
-  }
-
   .custom-home-main-title {
-    border-bottom: 1px solid rgb(198, 193, 193);
+    border-bottom: 1px solid #ffb876;
   }
 
   .home-text {
@@ -102,3 +128,57 @@ body {
     font-weight: 200;
     font-size: 0.9rem;
   }
+
+  .menu-content {
+    padding: 5px;
+  }
+
+  .menu-title {
+    color: #ffae62;
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    font-weight: 200;
+  }
+
+  .menu-text{
+    letter-spacing: 0.1rem;
+    font-weight: 200;
+    font-size: 0.9rem;
+  }
+
+  .responsive-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.button-custom {
+  border-color: #f2d5b6 !important;
+  color: grey !important;
+}
+
+.button-custom:hover {
+  background-color: #f2d5b6 !important;
+  color: #fff !important;
+}
+
+.menu-custom-btn {
+  width: 80%;
+  margin: 0 10px;
+}
+
+.custom-label {
+  letter-spacing: 0.1rem;
+  font-weight: 200;
+  font-size: 1.1rem;
+}
+
+.custom-field > select,
+.custom-field > textarea,
+.custom-field > input  {
+  width: 100%;
+  box-sizing: border-box;
+  border: #dadada 1px solid;
+  border-radius: 5px;
+}
