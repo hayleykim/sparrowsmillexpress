@@ -24,6 +24,9 @@ from .forms import ContactForm, MenuForm, PhotoUploadForm
 def home(request):
     return render(request, 'home.html')
 
+def gallery(request):
+    return render(request, 'gallery.html')
+
 
 def about(request):
     if request.method == 'POST':

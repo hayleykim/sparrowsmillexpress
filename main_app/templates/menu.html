@@ -2,10 +2,6 @@
 {% block content %}
 
 <div class="container">
-<h1>Menu</h1>
-<hr>
-
-
 {% if menus_by_category %}
   {% for category, menus in menus_by_category.items %}
     <h2>{{ category }}</h2>
