@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import environ
 import os
-from decouple import config
+# from decouple import config
 
 environ.Env()
 environ.Env.read_env()
@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET') #os.environ['']
+SECRET_KEY = os.environ['SECRET'] #os.environ['']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -35,8 +35,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = config('EMAIL_HOST_USER_SMTP')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD_SMTP')
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER_SMTP']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD_SMTP']
 EMAIL_PORT = '2525'
 
 # Application definition
