@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-0azz^k$6a04=o89nehi#4egxp&&kk*ak+&p8bmg5bl4u$bsy=&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
 EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER_SMTP']
