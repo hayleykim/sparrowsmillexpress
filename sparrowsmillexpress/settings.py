@@ -32,7 +32,7 @@ SECRET_KEY = os.environ['SECRET']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sparrowsmillexpress.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
 EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER_SMTP']
