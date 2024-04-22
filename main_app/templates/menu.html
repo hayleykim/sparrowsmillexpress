@@ -4,11 +4,11 @@
 <div class="container">
 {% if menus_by_category %}
   {% for category, menus in menus_by_category.items %}
-    <h2>{{ category }}</h2>
+    <div class="home-main-text custom-home-main-title mt-3 mb-2">{{ category }}</div>
 
     <div class="row">
       {% for m in menus %}
-        <div class="col-md-3">
+        <div class="col-md-3 mt-3">
           <div class="card">
             
             <div class="menu-content">
